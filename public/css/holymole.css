@@ -1,0 +1,60 @@
+@font-face{
+	font-family:'DisposableDigi BB';
+	src: url('/fonts/DisposableDigi_BB.ttf') format('truetype');
+}
+body{
+	margin: 0px;
+	background-color: black;
+}
+button{
+	background-color: green;
+	border: 2px solid darkgreen;
+}
+.playhole{
+	width:100px;
+	height:100px;
+	position:absolute;
+	display:inline-block;
+	z-index:1;
+	background-size: 100% 100%;
+	background-color: transparent;
+	visibility:hidden;
+}
+#playfield{
+	position: relative;
+	display: block;
+	width:100%;
+	height:720px;
+	background-image: url("/img/Dirt.jpg");
+}
+#loadhide{
+	visibility: hidden;
+	display: inline-block;
+	width:100%;
+	height:100%;
+	z-index:5;
+}
+#infobody{
+	display: flex;
+	background-color: black;
+	border-bottom: 4px solid white;
+}
+.infolabel{
+	color:white;
+	font-family: "DisposableDigi BB";
+	display: inline-block;
+	margin: auto;
+	font-size: 36px;
+	text-align: center;
+}
+.infostuff{
+	margin-left: auto;
+	margin-right: auto;
+	color: white;
+	font-family: "DisposableDigi BB";
+	font-size: 36px;
+}
+img.digglet{
+	width:100%;
+	height:100%;
+}
