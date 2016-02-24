@@ -3,6 +3,10 @@
 (function (){
 	var x = [80, 160, 240, 320, 400, 480, 56, 640, 720, 800, 880, 960, 1040];
 	var y = [40, 80, 120, 160, 200, 240, 280, 320, 360, 400, 440, 480, 520, 560, 600];
+	var sounds = [];
+	sounds[0] = document.getElementById("sound1");
+	sounds[1] = document.getElementById("sound2");
+	sounds[2] = document.getElementById("sound3");
 	var holes = $(".playhole");
 	var xpos;
 	var ypos
@@ -43,12 +47,13 @@
 			} else {
 				timer--;
 				$("#timer").empty();
-				$("#timer").append(timer + " seconds!");
+				$("#timer").append(timer);
 				console.log("You have " + timer + " seconds remaining!");
 			};
 		}, intervalGameTime);
 	};
 	function getHole(){
+		sounds[2].play();
 		if (gameOn == true){
 			var rand = randomPosition(holes);
 			randomHole = holes[rand];
@@ -98,6 +103,7 @@
 	};
 	function conflictResolution(a,b){
 		if (JSON.stringify(a) == JSON.stringify(b) && (gameOn == true)){
+			sounds[1].play();
 			score += 1;
 			hit += 1;
 			$("#score").empty();
@@ -147,6 +153,7 @@
 				"background-color":"red",
 				"border-color":"darkred"
 			});
+			sounds[0].play();
 			$('#score').empty();
 			$('#score').append(score);
 			gameTime();

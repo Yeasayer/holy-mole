@@ -12,7 +12,11 @@
 		<div class="infolabel">High Score:
 			<div class="infostuff" id="highscore">0</div>
 		</div>
-		<button class="infostuff" id="gamestart">Start Game</button>
+		<button class="infostuff" id="gamestart">Start Game
+			<audio id="sound1" class="sounds">
+				<source src="/audio/game-start.ogg" type="audio/ogg">
+			</audio>
+		</button>
 		<div class="infolabel">Timer:
 			<div class="infostuff" id="timer">0</div>
 		</div>
@@ -22,6 +26,12 @@
 	</div>
 	<div id="playfield">
 		<div id="loadhide"></div>
+		<audio id="sound2" class="sounds">
+			<source src="/audio/blip.ogg" type="audio/ogg">
+		</audio>
+		<audio id="sound3" class="sounds">
+			<source src="/audio/jump.ogg" type="audio/ogg">
+		</audio>
 			<div id="hole1" class="playhole">
 				<img class="digglet" src="/img/050.png">
 			</div>
@@ -56,6 +66,8 @@
 				<img class="digglet" src="/img/050.png">
 			</div>
 	</div>
+	<footer class="text1">Regime Studios' "Digglet™ Down" 2016. Digglet™ owned by Nintendo®. Licensed under Fun! (Seriously, just play the game and study the code, it's not like this was going to be used for commercial purposes!)
+	</footer>
 	<script src="/js/jquery-1.12.0.js"></script>
 	<script type="text/javascript" src="/js/holymole2.js"></script>
 </body>

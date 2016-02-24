@@ -58,3 +58,13 @@ img.digglet{
 	width:100%;
 	height:100%;
 }
+footer{
+	border-top:4px solid white;
+	background-color: black;
+}
+.text1{
+	text-align: center;
+	font-size: 24px;
+	font-family: "DisposableDigi BB";
+	color:white;
+}
