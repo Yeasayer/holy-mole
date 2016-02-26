@@ -27,12 +27,49 @@ button{
 	height:720px;
 	background-image: url("/img/Dirt.jpg");
 }
-#loadhide{
+#cheevoModal{
 	visibility: hidden;
 	display: inline-block;
-	width:100%;
-	height:100%;
+	position: relative;
+	margin:15% 35%;
+	width:30%;
+	height:30%;
 	z-index:5;
+	background-color: black;
+	border: 4px solid white;
+	border-radius: 12px;
+	color:white;
+	text-align: left;
+}
+#cheevoicons{
+	display: flex;
+	bottom:30px;
+	width:80%;
+	height:30px;
+	border: 2px solid white;
+	border-radius: 10px;
+	margin:0% 10%;
+	overflow:hidden;
+}
+div#cheevoModal > div#cheevoicons{
+	position: absolute;
+}
+#closebutton{
+	text-align:left;
+	position: relative;
+	display: inline-block;
+	border:2px solid white;
+	padding:3px;
+	top:10px;
+	left:10px;
+}
+#cheevotext{
+	top:20px;
+	position: relative;
+	text-align: center;
+	font-size: 40px;
+	width:80%;
+	margin:0% 10%;
 }
 #infobody{
 	display: flex;
@@ -67,4 +104,13 @@ footer{
 	font-size: 24px;
 	font-family: "DisposableDigi BB";
 	color:white;
+}
+.cheevo{
+	width:24px;
+	height:24px;
+}
+.cheevomargin{
+	margin-left:auto;
+	margin-right:auto;
+	display: inline-block;
 }

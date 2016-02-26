@@ -24,7 +24,7 @@ var gameOn = false;
 
 function randomPosition(a){
 	return Math.floor(Math.random()*a.length);
-};
+}
 function gameTime(){
 	timer = 30;
 	var intervalGameTime = 1000;
@@ -50,9 +50,9 @@ function gameTime(){
 			$("#timer").empty();
 			$("#timer").append(timer);
 			console.log("You have " + timer + " seconds remaining!");
-		};
+		}
 	}, intervalGameTime);
-};
+}
 function cheevoCheck(){
 	if((score > 14)){
 		$("#cheevoModal").css({
@@ -64,7 +64,7 @@ function cheevoCheck(){
 		$("#cheevotext").empty();
 		$("#cheevotext").append("You're kinda good at this whacking stuff!");
 		$("#cheevoicons").append("<div class=\"cheevomargin\"><img class=\"cheevo\" src=\"/img/Bronze.png\"></div>");
-	};
+	}
 	if((accuracy > 0.90) && (score >= 15)){
 		$("#cheevoModal").css({
 			opacity: 0.0, 
@@ -75,7 +75,7 @@ function cheevoCheck(){
 		$("#cheevotext").empty();
 		$("#cheevotext").append("You're very good at whacking stuff!");
 		$("#cheevoicons").append("<div class=\"cheevomargin\"><img class=\"cheevo\" src=\"/img/Target.png\"></div>");
-	};
+	}
 	if((score > 19)){
 		$("#cheevoModal").css({
 			opacity: 0.0,
@@ -86,7 +86,7 @@ function cheevoCheck(){
 		$("#cheevotext").empty();
 		$("#cheevotext").append("You are super cool!");
 		$("#cheevoicons").append("<div class=\"cheevomargin\"><img class=\"cheevo\" src=\"/img/Silver.png\"></div>");
-	};
+	}
 	if(score >= 25){
 		$("#cheevoModal").css({
 			opacity: 0.0,
@@ -97,7 +97,7 @@ function cheevoCheck(){
 		$("#cheevotext").empty();
 		$("#cheevotext").append("You beat my personal best! Congrats!");
 		$("#cheevoicons").append("<div class=\"cheevomargin\"><img class=\"cheevo\" src=\"/img/Gold.png\"></div>");
-	};
+	}
 	$("#closebutton").click(function (){
 		$("#cheevoModal").animate({
 				opacity:0.0
@@ -105,10 +105,10 @@ function cheevoCheck(){
 				visibility: "hidden"
 			});
 	});
-};
+}
 function getHole(){
 	sounds[2].play();
-	if (gameOn == true){
+	if (gameOn === true){
 		var rand = randomPosition(holes);
 		randomHole = holes[rand];
 		console.log(randomHole);
@@ -116,7 +116,7 @@ function getHole(){
 		countdown = 5;
 		lights();
 	}
-};
+}
 function lights(){
 	var interval1;
 	var interval2;
@@ -126,7 +126,7 @@ function lights(){
 	} else {
 		interval1 = 5000;
 		interval2 = 1000;
-	};
+	}
 	$(randomHole).css({opacity: 0.0, visibility: "visible"}).animate({opacity: 1.0}, interval2);
 	var timerInterval = setInterval(function(){
 		if (countdown <= 0 && timer > 0){
@@ -149,14 +149,14 @@ function lights(){
 			}, interval2);
 			countdown--;
 			console.log(countdown);
-		};
+		}
 		if (JSON.stringify(selectedHole) == JSON.stringify(randomHole)){
 			clearInterval(timerInterval);
-		};
+		}
 	}, interval1);
-};
+}
 function conflictResolution(a,b){
-	if (JSON.stringify(a) == JSON.stringify(b) && (gameOn == true)){
+	if (JSON.stringify(a) == JSON.stringify(b) && (gameOn === true)){
 		sounds[1].play();
 		score += 1;
 		hit += 1;
@@ -171,7 +171,7 @@ function conflictResolution(a,b){
 	} else {
 		miss += 1;
 	}
-};
+}
 function checkYoSelf(a,b){
 	accuracy = (a/b);
 	$("#accuracy").empty();
@@ -180,8 +180,8 @@ function checkYoSelf(a,b){
 		highscore = score;
 		$("#highscore").empty();
 		$("#highscore").append(highscore);
-	};
-};
+	}
+}
 function shuffleNSmack(){
 	holes.each(function (index){
 		xpos = randomPosition(x);
@@ -199,9 +199,9 @@ function shuffleNSmack(){
 			conflictResolution(selectedHole, randomHole);
 		});
 	});
-};
+}
 $("#gamestart").click(function(){
-	if (gameOn == false){
+	if (gameOn === false){
 		gameOn = true;
 		$("#cheevoModal").animate({
 			opacity:0.0
@@ -218,6 +218,6 @@ $("#gamestart").click(function(){
 		gameTime();
 		shuffleNSmack();
 		getHole();
-	};
+	}
 });
 })();
